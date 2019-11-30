@@ -12,8 +12,8 @@ class Game < Sinatra::Base
   end
 
   post '/names' do
-    @user = params[:user]
-    session[:user] = @user
+    @player_1 = params[:player_1]
+    session[:player_1] = @player_1
     redirect "/gameplay"
   end
 end
