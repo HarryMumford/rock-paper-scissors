@@ -1,4 +1,5 @@
 require 'sinatra'
+require_relative 'lib/rps'
 
 class Game < Sinatra::Base
   enable :sessions
@@ -29,13 +30,14 @@ class Game < Sinatra::Base
     erb(:player_2_choose)
   end
 
-  post 'player-2-choice' do
+  post '/player-2-choice' do
     @player_2_choice = params[:player_2_choice]
     session[:player_2_choice] = @player_2_choice
     redirect '/outcome'
   end
   
-  get 'outcome' do
+  get '/outcome' do
+    @outcome = RPS.new(session[:player_1_choice], session[:player_2_choice]).outcome
     erb(:outcome)
   end
 end

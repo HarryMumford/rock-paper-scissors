@@ -9,3 +9,13 @@ def choose_rock
   choose "rock"
   click_on "submit"
 end
+
+def choose_paper
+  choose "paper"
+  click_on "submit"
+end
+
+def choose_scissors
+  choose "scissors"
+  click_on "submit"
+end
