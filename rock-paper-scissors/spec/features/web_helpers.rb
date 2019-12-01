@@ -4,3 +4,8 @@ def sign_in
   fill_in "player_2", with: "test_player_2"
   click_on "Submit"
 end
+
+def choose_rock
+  choose "rock"
+  click_on "submit"
+end
